@@ -8,15 +8,13 @@ class HomePage extends StatelessWidget {
     return Scaffold(
       appBar: AppBar(
         elevation: 0.2,
-        title: Text("Jesús Flores"),
-
-        centerTitle: true,
-        backgroundColor: const Color.fromARGB(255, 14, 196, 150),
+        title: Text("Pagina Principal"),
+        backgroundColor: const Color.fromARGB(255, 255, 196, 0),
         actions: <Widget>[
           InkWell(
             onTap: null,
             child: IconButton(
-              icon: Icon(Icons.search, size: 25, color: Colors.white),
+              icon: Icon(Icons.search, color: Colors.white),
               onPressed: () {},
             ),
           ),
@@ -31,17 +29,18 @@ class HomePage extends StatelessWidget {
       ),
       drawer: Drawer(
         child: ListView(
-          children: [
+          children: <Widget>[
             UserAccountsDrawerHeader(
               decoration: BoxDecoration(
-                color: const Color.fromARGB(255, 31, 190, 143),
+                color: Color.fromARGB(255, 255, 196, 0),
               ),
-              accountName: Text("Jesús Flores 1186"),
+              accountName: Text("Jesús Daniel Flores Rodríguez"),
               accountEmail: Text("a.22308051281186@cbtis128.edu.mx"),
               currentAccountPicture: GestureDetector(
                 child: CircleAvatar(
-                  backgroundImage: NetworkImage(
-                    'https://raw.githubusercontent.com/floresstd/Images/refs/heads/main/314479.png',
+                  backgroundColor: Colors.white,
+                  child: Image.network(
+                    'https://raw.githubusercontent.com/floresstd/Images/refs/heads/main/314479.png', // reemplaza con tu link
                   ),
                 ),
               ),
@@ -52,8 +51,11 @@ class HomePage extends StatelessWidget {
                 onTap: () {
                   Navigator.popAndPushNamed(context, "/home");
                 },
-                leading: Icon(Icons.home, color: Colors.pink),
-                title: Text("Home Page"),
+                leading: Icon(
+                  Icons.home,
+                  color: Color.fromARGB(255, 255, 196, 0),
+                ),
+                title: Text("Página Principal"),
               ),
             ),
             InkWell(
@@ -63,7 +65,7 @@ class HomePage extends StatelessWidget {
                   Navigator.popAndPushNamed(context, "/profile");
                 },
                 leading: Icon(Icons.person, color: Colors.black),
-                title: Text("My Profile"),
+                title: Text("Mi Perfil"),
               ),
             ),
             InkWell(
@@ -72,28 +74,35 @@ class HomePage extends StatelessWidget {
                 onTap: () {
                   Navigator.pushNamed(context, "/news");
                 },
-                leading: Icon(Icons.shopping_basket, color: Colors.red),
-                title: Text("News"),
+                leading: Icon(
+                  Icons.shopping_basket,
+                  color: Color.fromARGB(255, 255, 0, 149),
+                ),
+                title: Text("Ver Menú"),
               ),
             ),
             Divider(),
             InkWell(
               onTap: null,
               child: ListTile(
-                leading: Icon(Icons.help, color: Colors.green),
-                title: Text("About"),
+                leading: Icon(
+                  Icons.help,
+                  color: const Color.fromARGB(255, 184, 184, 184),
+                ),
+                title: Text("Acerca De..."),
               ),
             ),
             InkWell(
               onTap: null,
               child: ListTile(
                 leading: Icon(Icons.power_settings_new, color: Colors.black),
-                title: Text("Log out"),
+                title: Text("Cerrar Sesión"),
               ),
             ),
           ],
         ),
       ),
+      body: Center(child: Text("Página Principal")),
     );
   }
 }

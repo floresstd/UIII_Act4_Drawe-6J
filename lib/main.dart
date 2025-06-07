@@ -1,9 +1,10 @@
 import 'package:flutter/material.dart';
+import 'package:myapp/news.dart';
+import 'package:myapp/profile.dart';
+
 import 'homepage.dart';
 
-void main() {
-  runApp(const MyApp());
-}
+void main() => runApp(MyApp());
 
 class MyApp extends StatelessWidget {
   const MyApp({super.key});
@@ -16,7 +17,11 @@ class MyApp extends StatelessWidget {
       home: HomePage(),
       routes: {
         "/home": (context) => HomePage(),
+        "/profile": (context) => Profile(title: "Perfil"),
+        "/news": (context) => News(title: "Menú de comida"),
       },
     );
   }
 }
+
+
